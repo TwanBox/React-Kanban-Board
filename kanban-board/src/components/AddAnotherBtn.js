@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Icon } from '@material-ui/core';
 import ClearIcon from '@material-ui/icons/Clear';
 import { connect } from 'react-redux';
-import { addList } from '../actions';
+import { addList, addCard } from '../actions';
 import './AddAnotherBtn.css';
 
-function AddAnotherBtn({ list, dispatch }) {
+function AddAnotherBtn({ list, dispatch, listID }) {
     const [formOpen, setFormOpen] = useState(false);
     const [formText, setFormText] = useState('');
 
@@ -13,8 +13,8 @@ function AddAnotherBtn({ list, dispatch }) {
         const placeholderText = list ? 'Enter list title..' : 'Enter a title for this card..';
         const addbuttonText = list ? 'Add List' : 'Add Card';
 
-        const handleForm = () => {
-            if(formText) {
+        const handleAddList = () => {
+            if (formText) {
                 dispatch(addList(formText));
                 setFormText('');
                 setFormOpen(false);
@@ -28,13 +28,16 @@ function AddAnotherBtn({ list, dispatch }) {
             setFormOpen(false);
         }
 
-        // const handleAddList = () => {
-        //     if(formText) {
-        //         dispatch(addList(formText));
-        //     }
+        const handleAddCard = () => {
+            if (formText) {
+                dispatch(addCard(listID, formText));
+                setFormText('');
+                setFormOpen(false);
+            }
 
-        //     return;
-        // }
+            return;
+        }
+
 
         return (
             <form className="addAnotherBtn-form">
@@ -46,7 +49,7 @@ function AddAnotherBtn({ list, dispatch }) {
                 >
                 </textarea>
                 <div class="addAnotherBtn-btnGroup">
-                    <button className="addAnotherBtn-addBtn" type="button" onClick={() => handleForm()}>{addbuttonText}</button>
+                    <button className="addAnotherBtn-addBtn" type="button" onClick={() => list ? handleAddList() : handleAddCard()}>{addbuttonText}</button>
                     <button className="addAnotherBtn-closeBtn" onClick={() => handleFormClose()}><ClearIcon /></button>
                 </div>
             </form>

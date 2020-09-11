@@ -10,7 +10,7 @@ function App({ lists }) {
       <div className="app-listRow">
         { 
           lists.map(list => (
-          <List key={list.id} title={list.title} cards={list.cards} />
+          <List key={list.id} listID={list.id} title={list.title} cards={list.cards} />
           )) 
         }
         <AddAnotherBtn list/>
