@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Icon } from '@material-ui/core';
 import ClearIcon from '@material-ui/icons/Clear';
+import { connect } from 'react-redux';
+import { addList } from '../actions';
 import './AddAnotherBtn.css';
 
-function AddAnotherBtn({ list }) {
+function AddAnotherBtn({ list, dispatch }) {
     const [formOpen, setFormOpen] = useState(false);
     const [formText, setFormText] = useState('');
 
@@ -12,16 +14,27 @@ function AddAnotherBtn({ list }) {
         const addbuttonText = list ? 'Add List' : 'Add Card';
 
         const handleForm = () => {
-            // save in store: formtext as a new card of the current list
+            if(formText) {
+                dispatch(addList(formText));
+                setFormText('');
+                setFormOpen(false);
+            }
+
+            return;
+        }
+
+        const handleFormClose = () => {
             setFormText('');
             setFormOpen(false);
         }
 
-        const handleFormClose = () => {
-            // empty the text
-            setFormText('');
-            setFormOpen(false);
-        }
+        // const handleAddList = () => {
+        //     if(formText) {
+        //         dispatch(addList(formText));
+        //     }
+
+        //     return;
+        // }
 
         return (
             <form className="addAnotherBtn-form">
@@ -62,4 +75,4 @@ function AddAnotherBtn({ list }) {
     )
 }
 
-export default AddAnotherBtn;
+export default connect() (AddAnotherBtn);
