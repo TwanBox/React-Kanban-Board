@@ -6,8 +6,11 @@ A drag and drop project management tool
 - User can add new cards to the list they created 
 - User can update the name of the list and the card's content
 
-### Future Features :octocat: 
-Authentication & database (store multiple boards in the db) 
+### Future Features :octocat:
+- Create a backend
+- Authentication
+- Database
+- Users can create multiple boards
 
 ## Tech Stack :crystal_ball: 
 - React 
