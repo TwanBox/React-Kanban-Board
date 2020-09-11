@@ -1,0 +1,93 @@
+.addAnotherBtn-cardText {
+    margin: 0;
+    color: grey;
+}
+
+.addAnotherBtn-cardText:hover {
+    color: rgb(83, 83, 83);
+}
+
+.addAnotherBtn-listText {
+    margin: 0;
+    color: white;
+}
+
+.addAnotherBtn-card {
+    display: flex;
+    background-color: inherit;
+    border-radius: 4px;
+    cursor: pointer;
+    color: grey;
+    margin-top: 10px;
+    padding: 5px 0 5px 7px;
+}
+
+.addAnotherBtn-card:hover {
+    background-color: rgb(226, 226, 226);
+    color: rgb(83, 83, 83)
+}
+
+.addAnotherBtn-list {
+    display: flex;
+    height: fit-content;
+    padding-right: 80px;
+    padding: 5px 80px 5px 7px;
+    color: #fff;
+    background-color: #3d99ce;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addAnotherBtn-list:hover {
+    background-color: #64a1c3;
+}
+
+.addAnotherBtn-closeBtn {
+    border: none;
+    outline: none;
+    color: grey;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.addAnotherBtn-btnGroup {
+    display: flex;
+    margin-top: 5px;
+}
+
+.addAnotherBtn-input {
+    width: 240px;
+    height: 70px;
+    outline: none;
+    border: none;
+    box-shadow: 0 3px 3px -2px gray;
+    border-radius: 4px;
+    resize: none;
+}
+
+.addAnotherBtn-inputList {
+    height: 25px;
+    padding-top: 10px;
+    padding-left: 8px;
+    font-size: 15px;
+}
+
+.addAnotherBtn-addBtn {
+    background-color: #5aac44;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.addAnotherBtn-addBtn:hover {
+    background-color: #65b94d;
+}
+
+.addAnotherBtn-form {
+    background-color: #ebecf0;
+    padding: 5px;
+    border-radius: 4px;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import List from './components/List';
 import { connect } from 'react-redux';
+import AddAnotherBtn from './components/AddAnotherBtn';
 import './App.css';
 
 function App({ lists }) {
@@ -9,9 +10,10 @@ function App({ lists }) {
       <div className="app-listRow">
         { 
           lists.map(list => (
-          <List title={list.title} cards={list.cards} />
+          <List key={list.id} title={list.title} cards={list.cards} />
           )) 
         }
+        <AddAnotherBtn list/>
       </div>
     </div>
   );

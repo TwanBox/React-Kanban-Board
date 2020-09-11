@@ -19,7 +19,7 @@ const initialState = [
 		cards: [
 			{
 				id: 123,
-				text: 'this'
+				text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'
 			},
 			{
 				id: 1234,
