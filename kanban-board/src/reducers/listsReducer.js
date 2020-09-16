@@ -1,3 +1,4 @@
+import { Droppable } from 'react-beautiful-dnd';
 import { CONSTANTS } from '../actions';
 
 let listID = 0;
@@ -33,6 +34,27 @@ const listReducer = (state = [], action) => {
 				}
 			})
 			return updatedList;
+		case CONSTANTS.DRAG_DONE:
+
+			const {
+				droppableIdStart,
+            	droppableIdEnd,
+            	droppableIndexStart,
+				droppableIndexEnd,
+				draggableId
+			} = action.payload;
+
+			const newState = [...state];
+			
+			// Moving cards in the same list
+			if (droppableIdStart === droppableIdEnd) {
+				const list = state.find(list => droppableIdStart === list.id);
+				const card = list.cards.splice(droppableIndexStart);
+				list.cards.splice(droppableIndexEnd, 0, ...card)
+			}
+
+			return newState;
+			
 		default:
 			return state;
 	};

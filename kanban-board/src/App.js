@@ -2,17 +2,11 @@ import React from 'react';
 import List from './components/List';
 import { connect } from 'react-redux';
 import AddAnotherBtn from './components/AddAnotherBtn';
-import { DragDropContext } from 'react-beautiful-dnd';
 import './App.css';
 
 function App({ lists }) {
 
-  const onDragEnd = () => {
-
-  }
-
   return (
-    <DragDropContext onDragEnd={onDragEnd()}>
       <div className="App">
         <div className="app-listRow">
           { 
@@ -23,7 +17,6 @@ function App({ lists }) {
           <AddAnotherBtn list/>
         </div>
       </div>
-    </DragDropContext>
   );
 }
 
